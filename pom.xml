@@ -120,11 +120,43 @@
             <artifactId>mybatis-spring</artifactId>  
             <version>1.2.0</version>  
         </dependency>  
+        
+		<!-- 添加Selenium依赖 -->     
+        <dependency>
+	        <groupId>org.seleniumhq.selenium</groupId>
+	        <artifactId>selenium-java</artifactId>
+	        <version>3.0.0-beta2</version>
+    	</dependency> 
+    	
+    	 
+	    <dependency>
+	        <groupId>org.seleniumhq.selenium</groupId>
+	        <artifactId>selenium-server</artifactId>
+	        <version>3.0.0-beta2</version>
+	    </dependency> 
+                  
+        <dependency>  
+            <groupId>com.opera</groupId>  
+            <artifactId>operadriver</artifactId>  
+        </dependency>      
           
     </dependencies>
-  
-
     
+    <dependencyManagement>  
+        <dependencies>  
+            <dependency>  
+                <groupId>com.opera</groupId>  
+                <artifactId>operadriver</artifactId>  
+                <version>0.16</version>  
+                <exclusions>  
+                    <exclusion>  
+                        <groupId>org.seleniumhq.selenium</groupId>  
+                        <artifactId>selenium-remote-driver</artifactId>  
+                    </exclusion>  
+                </exclusions>  
+            </dependency>  
+        </dependencies>  
+    </dependencyManagement>  
     
     
 </project>
